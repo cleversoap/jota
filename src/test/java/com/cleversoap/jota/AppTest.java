@@ -35,10 +35,8 @@ public class AppTest
      */
     public void testApp()
     {
-        System.out.println("Testing the Mat4");
-        Mat4 m = new Mat4();
-        System.out.println(m.toString());
-
+        System.out.println("Creating new Jota instance");
+        Jota j = new Jota();
         assertTrue( true );
     }
 }
