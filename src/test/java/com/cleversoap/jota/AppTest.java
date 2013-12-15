@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import com.hackoeur.jglm.Mat4;
+
 /**
  * Unit test for simple App.
  */
@@ -33,6 +35,10 @@ public class AppTest
      */
     public void testApp()
     {
+        System.out.println("Testing the Mat4");
+        Mat4 m = new Mat4();
+        System.out.println(m.toString());
+
         assertTrue( true );
     }
 }
