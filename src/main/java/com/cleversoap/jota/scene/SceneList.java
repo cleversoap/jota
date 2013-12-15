@@ -3,7 +3,7 @@ package com.cleversoap.jota.scene;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.cleversoap.jota.entities.Entity;
+import com.cleversoap.jota.entity.Entity;
 import com.cleversoap.jota.interfaces.IRenderable;
 
 /**
@@ -20,6 +20,9 @@ public class SceneList extends Scene
         _entities = new ArrayList<Entity>();
     }
 
+    /**
+     * Iterate over the list of entities to process them.
+     */
     @Override
     public void render(int delta)
     {

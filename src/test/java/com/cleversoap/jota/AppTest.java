@@ -6,6 +6,8 @@ import junit.framework.TestSuite;
 
 import com.hackoeur.jglm.Mat4;
 
+import com.cleversoap.jota.scene.SceneList;
+
 /**
  * Unit test for simple App.
  */
@@ -37,6 +39,7 @@ public class AppTest
     {
         System.out.println("Creating new Jota instance");
         Jota j = new Jota();
+        j.setScene(new SceneList());
         assertTrue( true );
     }
 }

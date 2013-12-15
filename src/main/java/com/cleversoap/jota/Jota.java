@@ -10,6 +10,19 @@ public class Jota
     {
     }
 
+    public Scene getScene()
+    {
+        return _scene;
+    }
+
+    public void setScene(Scene value)
+    {
+        if (_scene != null)
+            _scene.dispose();
+
+        _scene = value;
+    }
+
     /**
      * Render a single frame of the current scene if a scene exists.
      */

@@ -1,4 +1,4 @@
-package com.cleversoap.jota.entities;
+package com.cleversoap.jota.entity;
 
 public class Entity
 {

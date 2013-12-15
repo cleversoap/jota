@@ -12,4 +12,8 @@ public class Scene
     public void render(int delta)
     {
     }
+
+    public void dispose()
+    {
+    }
 }
