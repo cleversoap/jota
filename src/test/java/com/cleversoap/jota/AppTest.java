@@ -4,7 +4,21 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-import com.hackoeur.jglm.Mat4;
+import static org.lwjgl.opengl.GL11.GL_BLEND;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.glBlendFunc;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glClearColor;
+import static org.lwjgl.opengl.GL11.glDisable;
+import static org.lwjgl.opengl.GL11.glEnable;
+import static org.lwjgl.opengl.GL11.glViewport;
+
+import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
 
 import com.cleversoap.jota.scene.SceneList;
 
@@ -14,6 +28,18 @@ import com.cleversoap.jota.scene.SceneList;
 public class AppTest 
     extends TestCase
 {
+    // TODO: Put app test properties in a .properties file
+
+    // VSync
+    public static final boolean VSYNC = true;
+
+    // Dimensions
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
+
+    // Fullscreen
+    public static final boolean FULLSCREEN = false;
+
     /**
      * Create the test case
      *
@@ -37,9 +63,26 @@ public class AppTest
      */
     public void testApp()
     {
-        System.out.println("Creating new Jota instance");
-        Jota j = new Jota();
-        j.setScene(new SceneList());
-        assertTrue( true );
+        try
+        {
+            // Setup test display
+            Display.setTitle("Jota App Test");
+            Display.setResizable(true);
+            Display.setDisplayMode(new DisplayMode(WIDTH,HEIGHT));
+            Display.setVSyncEnabled(VSYNC);
+            Display.setFullscreen(FULLSCREEN);
+
+            Display.create();
+
+            System.out.println("Creating new Jota instance");
+            Jota j = new Jota();
+            j.setScene(new SceneList());
+            assertTrue(true);
+        }
+        catch (LWJGLException e)
+        {
+            System.out.println("Error in Jota App Test");
+            assertTrue(false);
+        }
     }
 }
