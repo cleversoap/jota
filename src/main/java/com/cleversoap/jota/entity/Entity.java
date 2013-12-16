@@ -1,6 +1,7 @@
 package com.cleversoap.jota.entity;
 
 import com.hackoeur.jglm.Vec3;
+import com.hackoeur.jglm.Vec4;
 
 /**
  * Base class for an entity in the scene, only contains a position
@@ -10,12 +11,14 @@ import com.hackoeur.jglm.Vec3;
 public class Entity
 {
     protected Vec3 _position;
+    protected Vec4 _rotation;
 
     /**
     */
     public Entity()
     {
         _position = new Vec3();
+        _rotation = new Vec4();
     }
 
     /**
@@ -51,5 +54,22 @@ public class Entity
     public void translate(float x, float y, float z)
     {
         translate(new Vec3(x, y, z));
+    }
+
+    /**
+     */
+    public Vec4 getRotation()
+    {
+        return _rotation;
+    }
+
+    public void setRotation(Vec4 value)
+    {
+        _rotation = value;
+    }
+
+    public void setRotation(float x, float y, float z, float w)
+    {
+        setRotation(new Vec4(x, y, z, w));
     }
 }
