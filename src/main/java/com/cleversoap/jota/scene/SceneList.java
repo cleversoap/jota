@@ -24,7 +24,7 @@ public class SceneList extends Scene
      * Iterate over the list of entities to process them.
      */
     @Override
-    public void render(int delta)
+    public void render(double delta)
     {
         for (Entity entity : _entities)
         {

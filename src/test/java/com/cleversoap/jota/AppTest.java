@@ -72,11 +72,30 @@ public class AppTest
             Display.setVSyncEnabled(VSYNC);
             Display.setFullscreen(FULLSCREEN);
 
+            // Show test display
             Display.create();
+
+            // Initialise OpenGL
+            glEnable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            glClearColor(0f, 0f, 0f, 0f);
+
+            resize();
 
             System.out.println("Creating new Jota instance");
             Jota j = new Jota();
             j.setScene(new SceneList());
+
+            // TODO: Initialise scene contents
+            while (!Display.isCloseRequested())
+            {
+                if (Display.wasResized())
+                    resize();
+
+                j.render(1/60);
+            }
+
             assertTrue(true);
         }
         catch (LWJGLException e)
@@ -84,5 +103,11 @@ public class AppTest
             System.out.println("Error in Jota App Test");
             assertTrue(false);
         }
+    }
+
+    // Resize the game projection
+    protected void resize()
+    {
+        glViewport(0, 0, Display.getWidth(), Display.getHeight());
     }
 }

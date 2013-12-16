@@ -26,7 +26,7 @@ public class Jota
     /**
      * Render a single frame of the current scene if a scene exists.
      */
-    public void render(int delta)
+    public void render(double delta)
     {
         if (_scene != null)
             _scene.render(delta);

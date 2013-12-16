@@ -53,13 +53,13 @@
             <artifactId>lwjgl</artifactId>
             <version>2.9.0</version>
         </dependency>
-        <!-- Don't need jglm as most math is provided by lwjgl (apparently)
+        <!-- Single-purpose maths library rather
+             than loading entire lwjgl_util -->
         <dependency>
             <groupId>com.hackoeur</groupId>
             <artifactId>jglm</artifactId>
             <version>0.1-SNAPSHOT</version>
         </dependency>
-        -->
     </dependencies>
 
 </project>
