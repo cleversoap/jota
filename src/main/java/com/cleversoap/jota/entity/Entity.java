@@ -1,9 +1,9 @@
 package com.cleversoap.jota.entity;
 
-//import com.hackoeur.jglm.Vector3d;
+//import com.hackoeur.jglm.Vector3f;
 import com.hackoeur.jglm.Vec4;
 
-import javax.vecmath.Vector3d;
+import javax.vecmath.Vector3f;
 
 /**
  * Base class for an entity in the scene, only contains a position
@@ -12,27 +12,27 @@ import javax.vecmath.Vector3d;
 // TODO: Should this explicitly be an abstract class?
 public class Entity
 {
-    protected Vector3d _position;
+    protected Vector3f _position;
     protected Vec4 _rotation;
 
     /**
     */
     public Entity()
     {
-        _position = new Vector3d();
+        _position = new Vector3f();
         _rotation = new Vec4();
     }
 
     /**
     */
-    public Vector3d getPosition()
+    public Vector3f getPosition()
     {
         return _position;
     }
 
     /**
     */
-    public void setPosition(Vector3d value)
+    public void setPosition(Vector3f value)
     {
         _position = value;
     }
@@ -41,21 +41,21 @@ public class Entity
     */
     public void setPosition(float x, float y, float z)
     {
-        setPosition(new Vector3d(x, y, z));
+        setPosition(new Vector3f(x, y, z));
     }
 
     /**
     */
-    public void translate(Vector3d translation)
+    public void translate(Vector3f translation)
     {
-        setPosition(_position.add(translation));
+        _position.add(translation);
     }
 
     /**
     */
     public void translate(float x, float y, float z)
     {
-        translate(new Vector3d(x, y, z));
+        translate(new Vector3f(x, y, z));
     }
 
     /**
