@@ -1,9 +1,7 @@
 package com.cleversoap.jota.entity;
 
-//import com.hackoeur.jglm.Vector3f;
-import com.hackoeur.jglm.Vec4;
-
 import javax.vecmath.Vector3f;
+import javax.vecmath.Quat4f;
 
 /**
  * Base class for an entity in the scene, only contains a position
@@ -13,14 +11,14 @@ import javax.vecmath.Vector3f;
 public class Entity
 {
     protected Vector3f _position;
-    protected Vec4 _rotation;
+    protected Quat4f _rotation;
 
     /**
     */
     public Entity()
     {
         _position = new Vector3f();
-        _rotation = new Vec4();
+        _rotation = new Quat4f();
     }
 
     /**
@@ -60,18 +58,18 @@ public class Entity
 
     /**
      */
-    public Vec4 getRotation()
+    public Quat4f getRotation()
     {
         return _rotation;
     }
 
-    public void setRotation(Vec4 value)
+    public void setRotation(Quat4f value)
     {
         _rotation = value;
     }
 
     public void setRotation(float x, float y, float z, float w)
     {
-        setRotation(new Vec4(x, y, z, w));
+        setRotation(new Quat4f(x, y, z, w));
     }
 }

@@ -1,21 +1,21 @@
 package com.cleversoap.jota.entity.util;
 
-import com.hackoeur.jglm.Vec3;
+import javax.vecmath.Vector3f;
 
 public class Face
 {
     // Vertex indices
-    protected Vec3 _vertex;
+    protected Vector3f _vertex;
 
     // Normal indices
-    protected Vec3 _normal;
+    protected Vector3f _normal;
 
     // TexCoord indices
-    protected Vec3 _texCoords;
+    protected Vector3f _texCoords;
 
     // TODO: The material
 
-    public Face(Vec3 vertex, Vec3 normal, Vec3 texCoords)
+    public Face(Vector3f vertex, Vector3f normal, Vector3f texCoords)
     {
         _vertex = vertex;
         _normal = normal;
@@ -23,17 +23,17 @@ public class Face
         _texCoords = texCoords;
     }
 
-    public Vec3 getVertex()
+    public Vector3f getVertex()
     {
         return _vertex;
     }
 
-    public Vec3 getNormal()
+    public Vector3f getNormal()
     {
         return _normal;
     }
 
-    public Vec3 getTexCoord()
+    public Vector3f getTexCoord()
     {
         return _texCoords;
     }

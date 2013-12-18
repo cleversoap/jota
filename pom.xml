@@ -55,11 +55,11 @@
         </dependency>
         <!-- Single-purpose maths library rather
              than loading entire lwjgl_util -->
-        <dependency>
+<!--        <dependency>
             <groupId>com.hackoeur</groupId>
             <artifactId>jglm</artifactId>
             <version>0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>java3d</groupId>
             <artifactId>vecmath</artifactId>
