@@ -72,4 +72,19 @@ public class Entity
     {
         setRotation(new Quat4f(x, y, z, w));
     }
+
+    public void rotate(Quat4f value)
+    {
+        _rotation.add(value);
+    }
+
+    public void rotate(float x, float y, float z, float w)
+    {
+       rotate(new Quat4f(x, y, z, w)); 
+    }
+
+    public void rotate(float x, float y, float z)
+    {
+        rotate(x,y,z,0.0f);
+    }
 }
