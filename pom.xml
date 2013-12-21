@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cleversoap.jota</groupId>
-    <artifactId>jota</artifactId>
+    <artifactId>jota-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>jota</name>
     <url>http://maven.apache.org</url>
@@ -13,6 +13,12 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <modules>
+        <module>jota</module>
+        <module>jota-utils</module>
+        <module>jota-test</module>
+    </modules>
 
     <build>
         <plugins>
